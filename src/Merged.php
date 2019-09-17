@@ -5,7 +5,6 @@ declare(strict_types=1);
 
 namespace ElegantBro\Arrayee;
 
-
 use ElegantBro\Interfaces\Arrayee;
 use Exception;
 use function array_merge;
@@ -31,7 +30,9 @@ final class Merged implements Arrayee
         return array_merge(
             ...(new Mapped(
                 $this->arrayees,
-                static function (Arrayee $arrayee) { return $arrayee->asArray(); }
+                static function (Arrayee $arrayee) {
+                    return $arrayee->asArray();
+                }
             ))->asArray()
         );
     }

@@ -5,7 +5,6 @@ declare(strict_types=1);
 
 namespace ElegantBro\Arrayee;
 
-
 use ElegantBro\Interfaces\Arrayee;
 use Exception;
 

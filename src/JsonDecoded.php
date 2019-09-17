@@ -5,7 +5,6 @@ declare(strict_types=1);
 
 namespace ElegantBro\Arrayee;
 
-
 use ElegantBro\Interfaces\Arrayee;
 use ElegantBro\Interfaces\Stringify;
 use Exception;
@@ -13,7 +12,6 @@ use RuntimeException;
 
 final class JsonDecoded implements Arrayee
 {
-
     /**
      * @var Stringify
      */
