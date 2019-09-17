@@ -1,0 +1,47 @@
+{
+  "name": "elegant-bro/arrayee",
+  "license": [
+    "MIT"
+  ],
+  "authors": [
+    {
+      "name": "Pavel Stepanets",
+      "email": "pahhan.ne@gmail.com"
+    },
+    {
+      "name": "Dmitry Anikeev",
+      "email": "anikeev.dmitry@outlook.com"
+    },
+    {
+      "name": "Artem Dekhtyar",
+      "email": "m@artemd.ru"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "ext-json": "*",
+    "elegant-bro/interfaces": "^0.1.0"
+  },
+  "require-dev": {
+    "ext-simplexml": "*",
+    "phpunit/phpunit": "^5.7 || ^6.4 || ^7.0 || ^8.0",
+    "symplify/easy-coding-standard": "^6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "ElegantBro\\Arrayee\\": "src"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "ElegantBro\\Arrayee\\Tests\\": "tests"
+    }
+  },
+  "config": {
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true,
+    "optimize-autoloader": true
+  }
+}
