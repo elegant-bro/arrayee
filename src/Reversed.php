@@ -2,29 +2,22 @@
 
 declare(strict_types=1);
 
-
 namespace ElegantBro\Arrayee;
 
 use ElegantBro\Interfaces\Arrayee;
 use Exception;
-use function array_map;
+use function array_reverse;
 
-final class Mapped implements Arrayee
+final class Reversed implements Arrayee
 {
     /**
      * @var Arrayee
      */
     private $arrayee;
 
-    /**
-     * @var callable
-     */
-    private $mapFunc;
-
-    public function __construct(Arrayee $arrayee, callable $mapFunc)
+    public function __construct(Arrayee $arrayee)
     {
         $this->arrayee = $arrayee;
-        $this->mapFunc = $mapFunc;
     }
 
     /**
@@ -33,6 +26,6 @@ final class Mapped implements Arrayee
      */
     public function asArray(): array
     {
-        return array_map($this->mapFunc, $this->arrayee->asArray());
+        return array_reverse($this->arrayee->asArray(), true);
     }
 }
