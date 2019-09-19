@@ -32,10 +32,8 @@ final class SortedByKeys implements Arrayee
      */
     public function asArray(): array
     {
-        uksort(
-            $arr = $this->arrayee->asArray(),
-            $this->compare
-        );
+        $arr = $this->arrayee->asArray();
+        uksort($arr, $this->compare);
 
         return $arr;
     }

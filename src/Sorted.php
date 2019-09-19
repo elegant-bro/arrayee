@@ -33,10 +33,8 @@ final class Sorted implements Arrayee
      */
     public function asArray(): array
     {
-        uasort(
-            $arr = $this->arrayee->asArray(),
-            $this->compare
-        );
+        $arr = $this->arrayee->asArray();
+        uasort($arr, $this->compare);
 
         return $arr;
     }
