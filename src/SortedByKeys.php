@@ -6,9 +6,9 @@ namespace ElegantBro\Arrayee;
 
 use ElegantBro\Interfaces\Arrayee;
 use Exception;
-use function uasort;
+use function uksort;
 
-final class Sorted implements Arrayee
+final class SortedByKeys implements Arrayee
 {
     /**
      * @var Arrayee
@@ -19,7 +19,6 @@ final class Sorted implements Arrayee
      * @var callable
      */
     private $compare;
-
 
     public function __construct(Arrayee $arrayee, callable $compare)
     {
@@ -33,7 +32,7 @@ final class Sorted implements Arrayee
      */
     public function asArray(): array
     {
-        uasort(
+        uksort(
             $arr = $this->arrayee->asArray(),
             $this->compare
         );

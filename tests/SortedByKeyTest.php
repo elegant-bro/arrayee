@@ -6,11 +6,11 @@ namespace ElegantBro\Arrayee\Tests;
 
 
 use ElegantBro\Arrayee\Just;
-use ElegantBro\Arrayee\Sorted;
+use ElegantBro\Arrayee\SortedByKeys;
 use Exception;
 use PHPUnit\Framework\TestCase;
 
-final class SortedTest extends TestCase
+final class SortedByKeyTest extends TestCase
 {
     /**
      * @throws Exception
@@ -19,15 +19,16 @@ final class SortedTest extends TestCase
     {
         $this->assertEquals(
             [
-                3 => 'img1.png',
-                2 => 'img2.png',
-                1 => 'img10.png',
-                0 => 'img12.png',
+                'img1.png' => 3,
+                'img2.png' => 2,
+                'img10.png' => 1,
+                'img12.png' => 0,
             ],
-            (new Sorted(
-                new Just(['img12.png', 'img10.png', 'img2.png', 'img1.png']),
+            (new SortedByKeys(
+                new Just(['img12.png' => 0, 'img10.png' => 1, 'img2.png' => 2, 'img1.png' => 3]),
                 'strnatcmp'
             ))->asArray()
         );
     }
+
 }
