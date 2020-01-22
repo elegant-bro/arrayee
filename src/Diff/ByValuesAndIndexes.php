@@ -10,9 +10,9 @@ namespace ElegantBro\Arrayee\Diff;
 use ElegantBro\Arrayee\Just;
 use ElegantBro\Arrayee\Mapped;
 use ElegantBro\Interfaces\Arrayee;
-use function array_diff;
+use function array_diff_assoc;
 
-final class ByValues implements DiffWay
+final class ByValuesAndIndexes implements DiffWay
 {
     /**
      * @var Arrayee
@@ -34,7 +34,7 @@ final class ByValues implements DiffWay
      */
     public function diff(Arrayee $arrayee): array
     {
-        return array_diff($arrayee->asArray(), ...(new Mapped(
+        return array_diff_assoc($arrayee->asArray(), ...(new Mapped(
             $this->arrayees,
             static function (Arrayee $arrayee) {
                 return $arrayee->asArray();

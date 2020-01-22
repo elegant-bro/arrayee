@@ -20,18 +20,18 @@ final class DiffOf implements Arrayee
     /**
      * @var DiffWay
      */
-    private $strategy;
+    private $way;
 
     /**
      * DiffOf constructor.
      *
      * @param Arrayee $arrayee
-     * @param DiffWay $strategy
+     * @param DiffWay $way
      */
-    public function __construct(Arrayee $arrayee, DiffWay $strategy)
+    public function __construct(Arrayee $arrayee, DiffWay $way)
     {
         $this->arrayee = $arrayee;
-        $this->strategy = $strategy;
+        $this->way = $way;
     }
 
     /**
@@ -39,6 +39,6 @@ final class DiffOf implements Arrayee
      */
     public function asArray(): array
     {
-        return $this->strategy->diff($this->arrayee);
+        return $this->way->diff($this->arrayee);
     }
 }
