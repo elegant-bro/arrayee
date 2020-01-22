@@ -8,11 +8,12 @@ namespace ElegantBro\Arrayee\Tests\Diff;
 use ElegantBro\Arrayee\Diff\ByValues;
 use ElegantBro\Arrayee\Just;
 use PHPUnit\Framework\TestCase;
+use Exception;
 
 class ByValuesTest extends TestCase
 {
     /**
-     * @throws \Exception
+     * @throws Exception
      */
     public function testDiff(): void
     {
