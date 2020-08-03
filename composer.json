@@ -20,7 +20,7 @@
   "require": {
     "php": ">=7.1",
     "ext-json": "*",
-    "elegant-bro/interfaces": "^0.1.0"
+    "elegant-bro/interfaces": "^1.0"
   },
   "require-dev": {
     "ext-simplexml": "*",
