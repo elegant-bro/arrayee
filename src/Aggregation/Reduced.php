@@ -29,7 +29,7 @@ final class Reduced implements Arrayee
     /**
      * Reduced constructor.
      * @param Arrayee $arrayee
-     * @param callable(array, mixed): array $callback function(array $carry, $item): array
+     * @param callable $callback Function that reduces items to array <code>function(array $carry, $item): array</code>
      * @param Arrayee $initial
      */
     public function __construct(Arrayee $arrayee, callable $callback, Arrayee $initial)
@@ -41,7 +41,7 @@ final class Reduced implements Arrayee
 
     /**
      * @param Arrayee $arrayee
-     * @param callable(array, mixed): array $callback function(array $carry, $item): array
+     * @param callable $callback Function that reduces items to array <code>function(array $carry, $item): array</code>
      * @return Reduced
      */
     public static function initialEmpty(Arrayee $arrayee, callable $callback): Reduced
