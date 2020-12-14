@@ -4,8 +4,8 @@ declare(strict_types=1);
 
 namespace ElegantBro\Arrayee\Aggregation;
 
-use ElegantBro\Interfaces\Arrayee;
 use ElegantBro\Arrayee\Just;
+use ElegantBro\Interfaces\Arrayee;
 use Exception;
 use function array_reduce;
 
