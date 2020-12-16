@@ -7,29 +7,29 @@
 
 Build container
 ```shell
-docker build --build-arg VERSION=7.4 --tag elegant-bro/arrayee:7.4 ./docker/
+composer docker-build
 ```
 Install dependencies
 ```shell
-docker run --rm -ti -v $PWD:/app elegant-bro/arrayee:7.4 composer install
-```
-
-Run tests
-```shell
-docker run --rm -ti -v $PWD:/app -w /app elegant-bro/arrayee:7.4 vendor/bin/phpunit
-```
-
-Ensure coverage is 100%
-```shell
-docker run --rm -ti -v $PWD:/app -w /app elegant-bro/arrayee:7.4 php check-coverage.php coverage.xml 100
-```
-
-Test code style
-```shell
-docker run --rm -ti -v $PWD:/app -w /app elegant-bro/arrayee:7.4 vendor/bin/ecs --level psr12 check src
+composer docker-install
 ```
 
 All tests
 ```shell
-docker run --rm -ti -v $PWD:/app -w /app elegant-bro/arrayee:7.4 vendor/bin/phpunit && php check-coverage.php coverage.xml 100 && vendor/bin/ecs --level psr12 check src
+composer check-all
+```
+
+Run tests
+```shell
+composer unit
+```
+
+Ensure coverage is 100%
+```shell
+composer coverage
+```
+
+Test code style
+```shell
+composer style
 ```
