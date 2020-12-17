@@ -49,13 +49,5 @@
     },
     "sort-packages": true,
     "optimize-autoloader": true
-  },
-  "scripts": {
-    "docker-build": "docker build --build-arg VERSION=7.4 --tag elegant-bro/arrayee:7.4 ./docker/",
-    "docker-install": "docker run --rm -v $PWD:/app elegant-bro/arrayee:7.4 composer install",
-    "style": "docker run --rm -v $PWD:/app -w /app elegant-bro/arrayee:7.4 vendor/bin/ecs --level psr12 check src",
-    "unit": "docker run --rm -v $PWD:/app -w /app elegant-bro/arrayee:7.4 -dzend_extension=xdebug.so -dxdebug.mode=coverage  vendor/bin/phpunit",
-    "coverage": "docker run --rm -v $PWD:/app -w /app elegant-bro/arrayee:7.4 php check-coverage.php coverage.xml 100",
-    "check-all": "composer unit && composer coverage && composer style"
   }
 }

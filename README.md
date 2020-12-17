@@ -5,31 +5,23 @@
 
 **Pass all tests locally before create pull request.**
 
-Build container
+Build test container and run all tests
 ```shell
-composer docker-build
-```
-Install dependencies
-```shell
-composer docker-install
+make all
 ```
 
-All tests
+Other commands
 ```shell
-composer check-all
-```
-
-Run tests
-```shell
-composer unit
-```
-
-Ensure coverage is 100%
-```shell
-composer coverage
-```
-
-Test code style
-```shell
-composer style
+# build the Dockerfile
+make build 
+# install composer requirements
+make install
+# enter to container shell
+make shell
+# style check
+make style-check
+# run unit tests
+make unit
+# ensure coverage is 100%
+make coverage
 ```
