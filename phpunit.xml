@@ -6,7 +6,7 @@
     bootstrap="./vendor/autoload.php"
     colors="true">
     <testsuites>
-        <testsuite name="elegant-bro/arrayee test suite">
+        <testsuite name="all">
             <directory>./tests</directory>
         </testsuite>
     </testsuites>

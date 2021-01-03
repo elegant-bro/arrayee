@@ -1,10 +1,10 @@
-docker:=docker run --rm -v $(CURDIR):/app -w /app elegant-bro/arrayee:7.4
+docker:=docker run --rm -u=$(shell id -u):$(shell id -g) -v $(CURDIR):/app -w /app elegant-bro/arrayee:7.4
 
 build:
 	docker build --build-arg VERSION=7.4 --tag elegant-bro/arrayee:7.4 ./docker/
 
 exec:
-	docker run --rm -ti -v $(CURDIR):/app:rw -w /app elegant-bro/arrayee:7.4 sh
+	docker run --rm -ti -u=$(shell id -u):$(shell id -g) -v $(CURDIR):/app:rw -w /app elegant-bro/arrayee:7.4 sh
 
 install:
 	$(docker) composer install
