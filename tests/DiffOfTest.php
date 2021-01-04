@@ -8,6 +8,7 @@ namespace ElegantBro\Arrayee\Tests;
 use ElegantBro\Arrayee\Diff\DiffWay;
 use ElegantBro\Arrayee\DiffOf;
 use ElegantBro\Arrayee\Just;
+use PHPUnit\Framework\MockObject\MockObject;
 use PHPUnit\Framework\TestCase;
 use Exception;
 
@@ -18,10 +19,11 @@ class DiffOfTest extends TestCase
      */
     public function testAsArray(): void
     {
+        /** @var MockObject|DiffWay<string> $way */
         $way = $this->createMock(DiffWay::class);
         $way->method('diff')->willReturn([1 => 'blue', 0 => 'red', 'b' => 'red']);
 
-        $this->assertEquals(
+        self::assertEquals(
             [1 => 'blue', 0 => 'red', 'b' => 'red'],
             (new DiffOf(
                 new Just(['a' => 'green', 'red', 'blue', 'b' => 'red']),

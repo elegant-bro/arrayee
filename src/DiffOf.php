@@ -9,7 +9,11 @@ namespace ElegantBro\Arrayee;
 
 use ElegantBro\Arrayee\Diff\DiffWay;
 use ElegantBro\Interfaces\Arrayee;
+use Exception;
 
+/**
+ * @template T
+ */
 final class DiffOf implements Arrayee
 {
     /**
@@ -18,15 +22,13 @@ final class DiffOf implements Arrayee
     private $arrayee;
 
     /**
-     * @var DiffWay
+     * @var DiffWay<T>
      */
     private $way;
 
     /**
-     * DiffOf constructor.
-     *
      * @param Arrayee $arrayee
-     * @param DiffWay $way
+     * @param DiffWay<T> $way
      */
     public function __construct(Arrayee $arrayee, DiffWay $way)
     {
@@ -35,7 +37,8 @@ final class DiffOf implements Arrayee
     }
 
     /**
-     * @inheritDoc
+     * @return array<T>
+     * @throws Exception
      */
     public function asArray(): array
     {

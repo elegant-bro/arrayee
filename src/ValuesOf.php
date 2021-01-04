@@ -2,13 +2,15 @@
 
 declare(strict_types=1);
 
-
 namespace ElegantBro\Arrayee;
 
 use ElegantBro\Interfaces\Arrayee;
 use Exception;
 use function array_values;
 
+/**
+ * @template T
+ */
 final class ValuesOf implements Arrayee
 {
     /**
@@ -22,7 +24,7 @@ final class ValuesOf implements Arrayee
     }
 
     /**
-     * @return array
+     * @return array<T>
      * @throws Exception
      */
     public function asArray(): array

@@ -7,10 +7,13 @@ namespace ElegantBro\Arrayee;
 use ElegantBro\Interfaces\Arrayee;
 use Exception;
 
+/**
+ * @template T
+ */
 final class FromIterable implements Arrayee
 {
     /**
-     * @var iterable
+     * @var iterable<T>
      */
     private $iterable;
 
@@ -19,6 +22,10 @@ final class FromIterable implements Arrayee
      */
     private $limit;
 
+    /**
+     * @param iterable<T> $iterable
+     * @param int $limit
+     */
     public function __construct(iterable $iterable, int $limit = 0)
     {
         $this->iterable = $iterable;
@@ -26,7 +33,7 @@ final class FromIterable implements Arrayee
     }
 
     /**
-     * @return array
+     * @return array<T>
      * @throws Exception
      */
     public function asArray(): array

@@ -25,6 +25,8 @@
   "require-dev": {
     "ext-simplexml": "*",
     "php-coveralls/php-coveralls": "^2.4",
+    "phpstan/phpstan": "^0.12.64",
+    "phpstan/phpstan-phpunit": "^0.12.17",
     "phpunit/phpunit": "^5.7 || ^6.4 || ^7.0",
     "symplify/easy-coding-standard": "^6.0"
   },

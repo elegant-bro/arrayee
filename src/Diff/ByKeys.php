@@ -10,7 +10,12 @@ namespace ElegantBro\Arrayee\Diff;
 use ElegantBro\Arrayee\Just;
 use ElegantBro\Arrayee\Mapped;
 use ElegantBro\Interfaces\Arrayee;
+use Exception;
 
+/**
+ * @template T
+ * @implements DiffWay<T>
+ */
 final class ByKeys implements DiffWay
 {
     /**
@@ -19,8 +24,6 @@ final class ByKeys implements DiffWay
     private $arrayees;
 
     /**
-     * ByValues constructor.
-     *
      * @param Arrayee ...$arrayees
      */
     public function __construct(Arrayee ...$arrayees)
@@ -29,7 +32,10 @@ final class ByKeys implements DiffWay
     }
 
     /**
-     * @inheritDoc
+     * @param Arrayee $arrayee
+     *
+     * @throws Exception
+     * @return array<T>
      */
     public function diff(Arrayee $arrayee): array
     {

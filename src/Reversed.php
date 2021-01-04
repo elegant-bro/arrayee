@@ -8,6 +8,9 @@ use ElegantBro\Interfaces\Arrayee;
 use Exception;
 use function array_reverse;
 
+/**
+ * @template T
+ */
 final class Reversed implements Arrayee
 {
     /**
@@ -21,7 +24,7 @@ final class Reversed implements Arrayee
     }
 
     /**
-     * @return array
+     * @return array<T>
      * @throws Exception
      */
     public function asArray(): array

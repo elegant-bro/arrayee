@@ -14,11 +14,12 @@ install:
 
 script:
   - vendor/bin/ecs --level psr12 check src
+  - vendor/bin/phpstan analyse
   - vendor/bin/phpunit
   - php check-coverage.php coverage.xml 100
 
 after_success:
-  - travis_retry php vendor/bin/php-coveralls -v
+  - travis_retry mkdir -p build/logs && php vendor/bin/php-coveralls -x coverage.xml -v
 
 env:
   - XDEBUG_MODE=coverage

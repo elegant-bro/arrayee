@@ -8,6 +8,9 @@ use ElegantBro\Interfaces\Arrayee;
 use Exception;
 use function uasort;
 
+/**
+ * @template T
+ */
 final class Sorted implements Arrayee
 {
     /**
@@ -20,7 +23,6 @@ final class Sorted implements Arrayee
      */
     private $compare;
 
-
     public function __construct(Arrayee $arrayee, callable $compare)
     {
         $this->arrayee = $arrayee;
@@ -28,7 +30,7 @@ final class Sorted implements Arrayee
     }
 
     /**
-     * @return array
+     * @return array<T>
      * @throws Exception
      */
     public function asArray(): array
