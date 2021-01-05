@@ -1,6 +1,10 @@
 language: php
 php:
   - '7.1'
+  - '7.2'
+  - '7.3'
+  - '7.4'
+
 branches:
   only:
     - master
@@ -12,3 +16,9 @@ script:
   - vendor/bin/ecs --level psr12 check src
   - vendor/bin/phpunit
   - php check-coverage.php coverage.xml 100
+
+after_success:
+  - travis_retry php vendor/bin/php-coveralls -v
+
+env:
+  - XDEBUG_MODE=coverage

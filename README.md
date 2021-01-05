@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.com/elegant-bro/arrayee.svg?branch=master)](https://travis-ci.com/elegant-bro/arrayee)
+[![Coverage Status](https://coveralls.io/repos/github/elegant-bro/arayee/badge.svg?branch=master)](https://coveralls.io/github/elegant-bro/arayee?branch=master)
 # Work with arrays in elegant way
 
 ## For contributors 
