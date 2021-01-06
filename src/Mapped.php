@@ -6,6 +6,7 @@ namespace ElegantBro\Arrayee;
 
 use ElegantBro\Interfaces\Arrayee;
 use Exception;
+
 use function array_map;
 
 /**
