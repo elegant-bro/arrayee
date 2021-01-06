@@ -7,6 +7,9 @@ namespace ElegantBro\Arrayee;
 use ElegantBro\Interfaces\Arrayee;
 use Exception;
 
+/**
+ * @template T
+ */
 final class FromCallable implements Arrayee
 {
     /**
@@ -20,7 +23,7 @@ final class FromCallable implements Arrayee
     }
 
     /**
-     * @return array
+     * @return array<T>
      * @throws Exception
      */
     public function asArray(): array

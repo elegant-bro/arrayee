@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 namespace ElegantBro\Arrayee;
 
 use ElegantBro\Interfaces\Arrayee;
@@ -22,7 +21,7 @@ final class KeysOf implements Arrayee
     }
 
     /**
-     * @return array
+     * @return array<int, (int|string)>
      * @throws Exception
      */
     public function asArray(): array

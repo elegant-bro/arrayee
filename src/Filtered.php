@@ -2,13 +2,15 @@
 
 declare(strict_types=1);
 
-
 namespace ElegantBro\Arrayee;
 
 use ElegantBro\Interfaces\Arrayee;
 use Exception;
 use function array_filter;
 
+/**
+ * @template T
+ */
 final class Filtered implements Arrayee
 {
     /**
@@ -28,7 +30,7 @@ final class Filtered implements Arrayee
     }
 
     /**
-     * @return array
+     * @return array<T>
      * @throws Exception
      */
     public function asArray(): array

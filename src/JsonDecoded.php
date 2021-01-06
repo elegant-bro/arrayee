@@ -2,7 +2,6 @@
 
 declare(strict_types=1);
 
-
 namespace ElegantBro\Arrayee;
 
 use ElegantBro\Interfaces\Arrayee;
@@ -10,6 +9,9 @@ use ElegantBro\Interfaces\Stringify;
 use Exception;
 use RuntimeException;
 
+/**
+ * @template T
+ */
 final class JsonDecoded implements Arrayee
 {
     /**
@@ -23,7 +25,7 @@ final class JsonDecoded implements Arrayee
     }
 
     /**
-     * @return array
+     * @return array<T>
      * @throws Exception
      */
     public function asArray(): array

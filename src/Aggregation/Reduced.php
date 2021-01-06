@@ -7,8 +7,13 @@ namespace ElegantBro\Arrayee\Aggregation;
 use ElegantBro\Arrayee\Just;
 use ElegantBro\Interfaces\Arrayee;
 use Exception;
+use RuntimeException;
+
 use function array_reduce;
 
+/**
+ * @template V
+ */
 final class Reduced implements Arrayee
 {
     /**
@@ -17,7 +22,7 @@ final class Reduced implements Arrayee
     private $arrayee;
 
     /**
-     * @var callback
+     * @var callable
      */
     private $callback;
 
@@ -27,7 +32,6 @@ final class Reduced implements Arrayee
     private $initial;
 
     /**
-     * Reduced constructor.
      * @param Arrayee $arrayee
      * @param callable $callback Function that reduces items to array <code>function(array $carry, $item): array</code>
      * @param Arrayee $initial
@@ -42,7 +46,7 @@ final class Reduced implements Arrayee
     /**
      * @param Arrayee $arrayee
      * @param callable $callback Function that reduces items to array <code>function(array $carry, $item): array</code>
-     * @return Reduced
+     * @return Reduced<V>
      */
     public static function initialEmpty(Arrayee $arrayee, callable $callback): Reduced
     {
@@ -54,7 +58,7 @@ final class Reduced implements Arrayee
     }
 
     /**
-     * @return array
+     * @return array<V>
      * @throws Exception
      */
     public function asArray(): array
@@ -65,7 +69,7 @@ final class Reduced implements Arrayee
             $this->initial->asArray()
         );
         if (!is_array($reduced)) {
-            throw new \RuntimeException("Reduced is not array");
+            throw new RuntimeException("Reduced is not array");
         }
         return $reduced;
     }

@@ -8,6 +8,9 @@ use ElegantBro\Interfaces\Arrayee;
 use Exception;
 use function uksort;
 
+/**
+ * @template T
+ */
 final class SortedByKeys implements Arrayee
 {
     /**
@@ -27,7 +30,7 @@ final class SortedByKeys implements Arrayee
     }
 
     /**
-     * @return array
+     * @return array<T>
      * @throws Exception
      */
     public function asArray(): array

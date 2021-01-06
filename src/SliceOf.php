@@ -2,13 +2,15 @@
 
 declare(strict_types=1);
 
-
 namespace ElegantBro\Arrayee;
 
 use ElegantBro\Interfaces\Arrayee;
 use Exception;
 use function array_slice;
 
+/**
+ * @template T
+ */
 final class SliceOf implements Arrayee
 {
     /**
@@ -34,7 +36,7 @@ final class SliceOf implements Arrayee
     }
 
     /**
-     * @return array
+     * @return array<T>
      * @throws Exception
      */
     public function asArray(): array
