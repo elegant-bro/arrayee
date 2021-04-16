@@ -9,7 +9,8 @@ use Exception;
 use function call_user_func;
 
 /**
- * @template T
+ * @template In
+ * @template Out
  */
 final class MappedWithKeys implements Arrayee
 {
@@ -28,6 +29,11 @@ final class MappedWithKeys implements Arrayee
      */
     private $keyFunc;
 
+    /**
+     * @param Arrayee<In> $arrayee
+     * @param callable $valFunc
+     * @return self<Out>
+     */
     public static function preserveKeys(Arrayee $arrayee, callable $valFunc): self
     {
         return new self(
@@ -39,6 +45,11 @@ final class MappedWithKeys implements Arrayee
         );
     }
 
+    /**
+     * @param Arrayee<In> $arrayee
+     * @param callable $keyFunc
+     * @return self<Out>
+     */
     public static function preserveValues(Arrayee $arrayee, callable $keyFunc): self
     {
         return new self(
@@ -50,6 +61,12 @@ final class MappedWithKeys implements Arrayee
         );
     }
 
+    /**
+     * MappedWithKeys constructor.
+     * @param Arrayee<In> $arrayee
+     * @param callable $keyFunc
+     * @param callable $valFunc
+     */
     public function __construct(Arrayee $arrayee, callable $keyFunc, callable $valFunc)
     {
         $this->arrayee = $arrayee;
@@ -58,7 +75,7 @@ final class MappedWithKeys implements Arrayee
     }
 
     /**
-     * @return array<T>
+     * @return array<Out>
      * @throws Exception
      */
     public function asArray(): array

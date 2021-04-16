@@ -23,6 +23,9 @@ style-check:
 style-fix:
 	$(docker) vendor/bin/phpcbf -p --standard=PSR12 src
 
+stan:
+	$(docker) vendor/bin/phpstan analyse
+
 unit:
 	$(docker) -dzend_extension=xdebug.so -dxdebug.mode=coverage  vendor/bin/phpunit
 
