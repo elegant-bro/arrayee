@@ -11,23 +11,18 @@ use Exception;
 class Exploded implements Arrayee
 {
     /**
-     * @var Stringify glue
+     * @var Stringify separator
      */
-    private $glue;
+    private $separator;
 
     /**
      * @var Stringify stringify to explode
      */
     private $stringify;
 
-    public static function byComma(Stringify $stringify): Exploded
+    public function __construct(Stringify $separator, Stringify $stringify)
     {
-        return new static(new \ElegantBro\Stringify\Just(","), $stringify);
-    }
-
-    public function __construct(Stringify $glue, Stringify $stringify)
-    {
-        $this->glue = $glue;
+        $this->separator = $separator;
         $this->stringify = $stringify;
     }
 
@@ -37,6 +32,6 @@ class Exploded implements Arrayee
      */
     public function asArray(): array
     {
-        return explode($this->glue->asString(), $this->stringify->asString());
+        return explode($this->separator->asString(), $this->stringify->asString());
     }
 }
