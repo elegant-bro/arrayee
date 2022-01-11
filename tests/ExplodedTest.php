@@ -17,7 +17,7 @@ class ExplodedTest extends TestCase
         $this->assertEquals(
             ['foo','bar'],
             (new Exploded(
-                new Stub\StubStringify("-"),
+                new StubStringify("-"),
                 new StubStringify('foo-bar')
             ))->asArray()
         );
